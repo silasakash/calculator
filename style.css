@@ -1,0 +1,13 @@
+* {
+    font-family: 'Didact Gothic',Tahoma, Verdana, sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+header, footer {
+    text-align: center;
+}
+.calculator-container {
+    margin:auto;
+}
