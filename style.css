@@ -1,13 +1,84 @@
 * {
     font-family: 'Didact Gothic',Tahoma, Verdana, sans-serif;
 }
+
+html {
+    height: 100%;
+    padding: 0;
+}
+
 body {
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
+
 header, footer {
     text-align: center;
+    flex-basis: 50px;
 }
+
+footer {
+    margin-top: auto;
+}
+
 .calculator-container {
     margin:auto;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.calculator, .screen {
+    border: solid black;
+}
+
+.calculator {
+    padding: 10px;
+    height: 80%;
+    width: 30%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.screen {
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    flex: 1;
+}
+
+.result {
+    margin: 0;
+    text-align: right;
+    margin-top: auto;
+}
+
+.keypad {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+}
+
+.key-row {
+    display: flex;
+    flex: 1;
+}
+
+button {
+    padding: 0;
+    border: solid black 1px;
+    flex: 1;
+}
+
+#zero { 
+    flex: 2;
 }
