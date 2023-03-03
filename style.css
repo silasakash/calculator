@@ -60,7 +60,7 @@ footer {
     border: solid red;
 }
 
-.result {
+#result {
     margin: 0;
     color: white;
     text-align: right;
@@ -108,8 +108,8 @@ button:active {
     background-color: orange;
 }
 
-#zero { 
+#zeroButton { 
     flex: 2;
-    border-radius: 50px;
+    border-radius: 100px;
 }
 
