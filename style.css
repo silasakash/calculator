@@ -45,6 +45,9 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 5px 5px darkslategrey;
 }
 
 .screen {
@@ -53,12 +56,17 @@ footer {
     flex-direction: column;
     padding: 2px;
     flex: 1;
+    font-family: 'Orbitron',Tahoma, Verdana, sans-serif;
+    border: solid red;
 }
 
 .result {
     margin: 0;
+    color: white;
     text-align: right;
     margin-top: auto;
+    font-size: 50px;
+    font-family: 'Orbitron',Tahoma, Verdana, sans-serif;
 }
 
 .keypad {
@@ -75,10 +83,33 @@ footer {
 
 button {
     padding: 0;
-    border: solid black 1px;
+    color: white;
+    border: grey;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: darkgray;
+    border-radius: 50%;
     flex: 1;
+    margin: 2px;
+    transition-duration: 0.4s;
+    box-shadow: 0 9px #5b8c82;
+}
+
+button:active {
+    box-shadow: 0 5px #757d7b;
+    transform: translateY(4px);
+}
+.addFn {
+    background-color: lightgray;
+    color: black;
+}
+
+.operator {
+    background-color: orange;
 }
 
 #zero { 
     flex: 2;
+    border-radius: 50px;
 }
+
