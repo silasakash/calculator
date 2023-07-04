@@ -39,14 +39,12 @@ function divide(no1, no2) {
 }
 
 function negate(no) {
-    return no1 * -1;
-}
-
-function percentage(no) {
-    return no / 100;
+    return no * -1;
 }
 
 function operate(operator, operand1, operand2) {
+    operand1 = Number(operand1);
+    operand2 = Number(operand2);
     if (operator === "+") {
         return add(operand1, operand2);
     }
@@ -59,153 +57,290 @@ function operate(operator, operand1, operand2) {
     else if (operator === "/") {
         return divide(operand1, operand2);
     }
-    else if (operator === "+/-") {
-        return negate(operand1);
-    }
-    else if (operator === "%") {
-        return percentage(operand1);
-    }
 }
 
 let firstNumber = null;
 let secondNumber = null;
 let operator = null;
+let currentNumber = "";
 
 acButton.addEventListener("click", function () {
     result.textContent = '0';
     firstNumber = null;
     secondNumber = null;
     operator = null;
+    currentNumber = "";
 });
 
 negateButton.addEventListener("click", function () {
-    result.textContent = - Number(result.textContent);
-    firstNumber = - firstNumber;
+    result.textContent = - currentNumber;
+    currentNumber = "-" + currentNumber;
+    firstNumber = currentNumber;
 });
 
 percentageButton.addEventListener("click", function () {
-    result.textContent = (Number(result.textContent))/100;
+    result.textContent = currentNumber / 100;
+    currentNumber = currentNumber / 100;
+    firstNumber = currentNumber;
 });
 
 divideButton.addEventListener("click", function () {
     operator = "/";
+    result.textContent = currentNumber;
+    currentNumber = "";
 
 });
 
 sevenButton.addEventListener("click", function () {
-    if (firstNumber == null) {
-        firstNumber = 7;
-    }
+    if (operator == null) {
+        if (currentNumber === "") {
+            currentNumber = "7";
+        } else {
+            currentNumber += "7";
+        }
+        result.textContent = currentNumber;
+        firstNumber = currentNumber;
+    }   
     else {
-        secondNumber = 7;
-    }
-    result.textContent = "7";
+        if (currentNumber === "") {
+            currentNumber = "7";
+        } else {
+            currentNumber += "7";
+        }
+        result.textContent = currentNumber;
+        secondNumber = currentNumber;
+    } 
 });
 
 eightButton.addEventListener("click", function () {
-    if (firstNumber == null) {
-        firstNumber = 8;
-    }
+    if (operator == null) {
+        if (currentNumber === "") {
+            currentNumber = "8";
+        } else {
+            currentNumber += "8";
+        }
+        result.textContent = currentNumber;
+        firstNumber = currentNumber;
+    }   
     else {
-        secondNumber = 8;
-    }
-    result.textContent = "8";
+        if (currentNumber === "") {
+            currentNumber = "8";
+        } else {
+            currentNumber += "8";
+        }
+        result.textContent = currentNumber;
+        secondNumber = currentNumber;
+    } 
 });
 
 nineButton.addEventListener("click", function () {
-    if (firstNumber == null) {
-        firstNumber = 9;
-    }
+    if (operator == null) {
+        if (currentNumber === "") {
+            currentNumber = "9";
+        } else {
+            currentNumber += "9";
+        }
+        result.textContent = currentNumber;
+        firstNumber = currentNumber;
+    }   
     else {
-        secondNumber = 9;
-    }
-    result.textContent = "9";
+        if (currentNumber === "") {
+            currentNumber = "9";
+        } else {
+            currentNumber += "9";
+        }
+        result.textContent = currentNumber;
+        secondNumber = currentNumber;
+    } 
 });
 
 multiplyButton.addEventListener("click", function () {
     operator = "*";
+    result.textContent = currentNumber;
+    currentNumber = "";
 });
 
 fourButton.addEventListener("click", function () {
-    if (firstNumber == null) {
-        firstNumber = 4;
-    }
+    if (operator == null) {
+        if (currentNumber === "") {
+            currentNumber = "4";
+        } else {
+            currentNumber += "4";
+        }
+        result.textContent = currentNumber;
+        firstNumber = currentNumber;
+    }   
     else {
-        secondNumber = 4;
-    }
-    result.textContent = "4";
+        if (currentNumber === "") {
+            currentNumber = "4";
+        } else {
+            currentNumber += "4";
+        }
+        result.textContent = currentNumber;
+        secondNumber = currentNumber;
+    } 
 });
 
 fiveButton.addEventListener("click", function () {
-    if (firstNumber == null) {
-        firstNumber = 5;
-    }
+    if (operator == null) {
+        if (currentNumber === "") {
+            currentNumber = "5";
+        } else {
+            currentNumber += "5";
+        }
+        result.textContent = currentNumber;
+        firstNumber = currentNumber;
+    }   
     else {
-        secondNumber = 5;
-    }
-    result.textContent = "5";
+        if (currentNumber === "") {
+            currentNumber = "5";
+        } else {
+            currentNumber += "5";
+        }
+        result.textContent = currentNumber;
+        secondNumber = currentNumber;
+    } 
 });
 
 sixButton.addEventListener("click", function () {
-    if (firstNumber == null) {
-        firstNumber = 6;
-    }
+    if (operator == null) {
+        if (currentNumber === "") {
+            currentNumber = "6";
+        } else {
+            currentNumber += "6";
+        }
+        result.textContent = currentNumber;
+        firstNumber = currentNumber;
+    }   
     else {
-        secondNumber = 6;
-    }
-    result.textContent = "6";
+        if (currentNumber === "") {
+            currentNumber = "6";
+        } else {
+            currentNumber += "6";
+        }
+        result.textContent = currentNumber;
+        secondNumber = currentNumber;
+    } 
 });
 
 subtractButton.addEventListener("click", function () {
     operator = "-";
+    result.textContent = currentNumber;
+    currentNumber = "";
 });
 
 oneButton.addEventListener("click", function () {
-    if (firstNumber == null) {
-        firstNumber = 1;
-    }
+    if (operator == null) {
+        if (currentNumber === "") {
+            currentNumber = "1";
+        } else {
+            currentNumber += "1";
+        }
+        result.textContent = currentNumber;
+        firstNumber = currentNumber;
+    }   
     else {
-        secondNumber = 1;
-    }
-    result.textContent = "1";
+        if (currentNumber === "") {
+            currentNumber = "1";
+        } else {
+            currentNumber += "1";
+        }
+        result.textContent = currentNumber;
+        secondNumber = currentNumber;
+    } 
 });
 
 twoButton.addEventListener("click", function () {
-    if (firstNumber == null) {
-        firstNumber = 2;
-    }
+    if (operator == null) {
+        if (currentNumber === "") {
+            currentNumber = "2";
+        } else {
+            currentNumber += "2";
+        }
+        result.textContent = currentNumber;
+        firstNumber = currentNumber;
+    }   
     else {
-        secondNumber = 2;
-    }
-    result.textContent = "2";
+        if (currentNumber === "") {
+            currentNumber = "2";
+        } else {
+            currentNumber += "2";
+        }
+        result.textContent = currentNumber;
+        secondNumber = currentNumber;
+    } 
 });
 
 threeButton.addEventListener("click", function () {
-    if (firstNumber == null) {
-        firstNumber = 3;
-    }
+    if (operator == null) {
+        if (currentNumber === "") {
+            currentNumber = "3";
+        } else {
+            currentNumber += "3";
+        }
+        result.textContent = currentNumber;
+        firstNumber = currentNumber;
+    }   
     else {
-        secondNumber = 3;
-    }
-    result.textContent = "3";
+        if (currentNumber === "") {
+            currentNumber = "3";
+        } else {
+            currentNumber += "3";
+        }
+        result.textContent = currentNumber;
+        secondNumber = currentNumber;
+    } 
 });
 
 addButton.addEventListener("click", function () {
     operator = "+";
+    result.textContent = currentNumber;
+    currentNumber = "";
 });
 
 zeroButton.addEventListener("click", function () {
-    if (firstNumber == null) {
-        firstNumber = 7;
-    }
+    if (operator == null) {
+        if (currentNumber === "") {
+            currentNumber = "0";
+        } else {
+            currentNumber += "0";
+        }
+        result.textContent = currentNumber;
+        firstNumber = currentNumber;
+    }   
     else {
-        secondNumber = 7;
-    }
-    result.textContent = "0";
+        if (currentNumber === "") {
+            currentNumber = "0";
+        } else {
+            currentNumber += "0";
+        }
+        result.textContent = currentNumber;
+        secondNumber = currentNumber;
+    } 
 });
 
 dotButton.addEventListener("click", function () {
-    result.textContent = - Number(result.textContent);
+    if (!result.textContent.includes(".")) {
+        if (operator == null) {
+            if (currentNumber === "") {
+                currentNumber = ".";
+            } else {
+                currentNumber += ".";
+            }
+            result.textContent = currentNumber;
+            firstNumber = currentNumber;
+        }   
+        else {
+            if (currentNumber === "") {
+                currentNumber = ".";
+            } else {
+                currentNumber += ".";
+            }
+            result.textContent = currentNumber;
+            secondNumber = currentNumber;
+        }
+    }
+    
 });
 
 equalsButton.addEventListener("click", function () {
@@ -221,5 +356,6 @@ equalsButton.addEventListener("click", function () {
         firstNumber = null;
         secondNumber = null;
         operator = null;
+        currentNumber = "";
     }
 });
