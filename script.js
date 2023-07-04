@@ -85,6 +85,10 @@ percentageButton.addEventListener("click", function () {
 });
 
 divideButton.addEventListener("click", function () {
+    if (operator != null) {
+        currentNumber = operate(operator,firstNumber,secondNumber);
+        firstNumber = currentNumber;
+    }
     operator = "/";
     result.textContent = currentNumber;
     currentNumber = "";
@@ -155,6 +159,10 @@ nineButton.addEventListener("click", function () {
 });
 
 multiplyButton.addEventListener("click", function () {
+    if (operator != null) {
+        currentNumber = operate(operator,firstNumber,secondNumber);
+        firstNumber = currentNumber;
+    }
     operator = "*";
     result.textContent = currentNumber;
     currentNumber = "";
@@ -224,6 +232,10 @@ sixButton.addEventListener("click", function () {
 });
 
 subtractButton.addEventListener("click", function () {
+    if (operator != null) {
+        currentNumber = operate(operator,firstNumber,secondNumber);
+        firstNumber = currentNumber;
+    }
     operator = "-";
     result.textContent = currentNumber;
     currentNumber = "";
@@ -293,6 +305,10 @@ threeButton.addEventListener("click", function () {
 });
 
 addButton.addEventListener("click", function () {
+    if (operator != null) {
+        currentNumber = operate(operator,firstNumber,secondNumber);
+        firstNumber = currentNumber;
+    }
     operator = "+";
     result.textContent = currentNumber;
     currentNumber = "";
@@ -353,7 +369,6 @@ equalsButton.addEventListener("click", function () {
             result.textContent = output.toFixed(5);
         }        
         firstNumber = output;
-        firstNumber = null;
         secondNumber = null;
         operator = null;
         currentNumber = "";
