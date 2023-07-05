@@ -75,7 +75,12 @@ acButton.addEventListener("click", function () {
 negateButton.addEventListener("click", function () {
     result.textContent = - currentNumber;
     currentNumber = "-" + currentNumber;
-    firstNumber = currentNumber;
+    if (operator != null) {
+        secondNumber = currentNumber;
+    }
+    else {
+        firstNumber = currentNumber;
+    }    
 });
 
 percentageButton.addEventListener("click", function () {
