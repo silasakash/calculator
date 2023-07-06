@@ -21,25 +21,31 @@ const equalsButton = document.getElementById("equalsButton");
 
 const result = document.getElementById("result");
 
+
 //operations
 function add(no1, no2) {
-    return no1 + no2;
+    let calculation = no1 + no2;
+    return checkDisplayLimit(calculation,9);
 }
 
 function subtract(no1, no2) {
-    return no1 - no2;
+    let calculation = no1 - no2;
+    return checkDisplayLimit(calculation,9);
 }
 
 function multiply(no1, no2) {
-    return no1 * no2;
+    let calculation = no1 * no2;
+    return checkDisplayLimit(calculation,9);
 }
 
 function divide(no1, no2) {
-    return no1 / no2;
+    let calculation = no1 / no2;
+    return checkDisplayLimit(calculation,9);
 }
 
 function negate(no) {
-    return no * -1;
+    let calculation = no * -1;
+    return checkDisplayLimit(calculation,9);
 }
 
 function operate(operator, operand1, operand2) {
@@ -58,6 +64,19 @@ function operate(operator, operand1, operand2) {
         return divide(operand1, operand2);
     }
 }
+
+function checkDisplayLimit(number, maxDigits) {
+    let numberString = number.toString();
+    let totalDigits = numberString.replace(".", "").length;
+    let maxAllowedDigits = maxDigits + (numberString.includes(".") ? 1 : 0);
+    
+    if (totalDigits <= maxAllowedDigits) {
+      return number;
+    } else {
+      return parseFloat(number.toFixed(maxDigits));
+    }
+}
+
 
 let firstNumber = null;
 let secondNumber = null;
@@ -371,7 +390,7 @@ equalsButton.addEventListener("click", function () {
             result.textContent = output;
         }
         else {
-            result.textContent = output.toFixed(5);
+            result.textContent = output.toFixed(8).replace(/\.?0+$/, '');
         }        
         firstNumber = output;
         secondNumber = null;
